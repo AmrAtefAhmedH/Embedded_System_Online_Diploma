@@ -13,4 +13,5 @@ int main()
 	fflush(stdout);
 	scanf("%f %f",&x ,&y);
 	printf("Product: %f",x*y);
+	return 0 ;
 }
