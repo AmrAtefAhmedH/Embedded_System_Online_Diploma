@@ -13,4 +13,5 @@ int main()
 	fflush(stdout);
 	scanf("%d",&i); /* store the entered value in i */
 	printf("You entered: %d",i);
+	return 0 ;
 }
