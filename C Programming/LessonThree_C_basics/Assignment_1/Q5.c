@@ -12,6 +12,6 @@ int main()
 	fflush(stdin);
 	fflush(stdout);
 	scanf("%c",&x);
-	printf("ASCII value of G = %d",x);
+	printf("ASCII value of %c = %d",x,x);
 	return 0;
 }
