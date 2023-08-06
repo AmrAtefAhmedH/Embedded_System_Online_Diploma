@@ -1,0 +1,29 @@
+#@Copywrite : Amr Atef
+
+CC =arm-none-eabi-
+CFLAGS =-g -mcpu=arm926ej-s
+INCS =-I .
+LIBS = 
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+As = $(wildcard *.s)
+AsOBJ = $(As:.s=.o)
+PROJECT_NAME =First_Lab
+all: $(PROJECT_NAME).bin
+	@echo "Build is Done....."
+
+%.o: %.s
+	$(CC)as.exe $(CFLAGS) $< -o $@
+
+%.o: %.c
+	$(CC)gcc.exe -c $(CFLAGS) $(INCS) -o0  $< -o $@
+
+
+$(PROJECT_NAME).elf: $(OBJ) $(AsOBJ)
+	$(CC)ld.exe -T Linker_Script.ld $(LIBS) $(OBJ) -o $@ -Map=Map_File.map
+
+$(PROJECT_NAME).bin: $(PROJECT_NAME).elf
+	$(CC)objcopy.exe -O binary $< $@
+
+Clean:
+	rm *.o *.elf *.bin *.map
