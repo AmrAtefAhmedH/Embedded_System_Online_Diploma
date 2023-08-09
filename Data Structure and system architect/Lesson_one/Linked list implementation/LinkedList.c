@@ -125,3 +125,58 @@ void Linked_insertBetween(PtrToNode* P ,int Data ,int value_one , int value_two)
 	}
 
 }
+
+void Linked_getNth(PtrToNode currentNode,int n, int* ReturnData)
+{
+	int count = 0 ;
+	while(currentNode != NULL)
+	{
+		if(count == n)
+			*ReturnData = currentNode->data ;
+		count++;
+		currentNode = currentNode->nextElement;
+	}
+}
+
+
+int Linked_SizeIterative(PtrToNode currentNode)
+{
+	int count = 0 ;
+	while(currentNode != NULL)
+	{
+		count++;
+		currentNode = currentNode->nextElement ;
+	}
+	return count;
+}
+
+
+int Linked_sizeRecursive(PtrToNode currentNode)
+{
+	if (currentNode == NULL)
+		return 0 ;
+	else
+		return 1 +  Linked_sizeRecursive(currentNode->nextElement);
+}
+
+int Linked_middelElement(PtrToNode Head)
+{
+	PtrToNode tempPtr = Head;
+	if(!Linked_isEmpty(Head))
+	{
+		int NoOfElement = 0 , middle ;
+		while(tempPtr != NULL) // get number of element in the list
+		{
+			NoOfElement++;
+			tempPtr = tempPtr->nextElement;
+		}
+		tempPtr = Head;
+		middle = NoOfElement / 2 ;
+		while(middle != 0)
+		{
+			middle--;
+			tempPtr = tempPtr->nextElement ;
+		}
+	}
+	return tempPtr->data;
+}
