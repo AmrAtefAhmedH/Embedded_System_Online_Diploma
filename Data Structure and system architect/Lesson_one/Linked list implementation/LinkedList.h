@@ -36,5 +36,10 @@ void Linked_printList(PtrToNode );
 void Linked_Delete(PtrToNode* , int);
 void Linked_ClearList(PtrToNode*);
 void Linked_insertBetween(PtrToNode* ,int , int , int);
+void Linked_getNth(PtrToNode ,int, int *);
+int Linked_SizeIterative(PtrToNode); /*Iterative*/
+int Linked_sizeRecursive(PtrToNode);  /*PtrToNode*/
+int Linked_middelElement(PtrToNode);
+
 
 #endif /* LINKEDLIST_H_ */
