@@ -1,2 +1,2 @@
 # Embedded_System_Online_Diploma
-## * Amr Atef Ahmed *
+## _Amr Atef Ahmed_
